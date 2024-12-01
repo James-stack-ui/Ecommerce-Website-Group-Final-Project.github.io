@@ -3,6 +3,9 @@
   --product-deal-card-horizontal-padding: 20px;
 }
 
+
+
+
 /* Ensure the carousel covers the entire background */
 .carousel {
   position: absolute;
@@ -67,7 +70,8 @@ button {
 /* Styles I added */
 
 .brand-logo {
-  width: 100px;
+  width: 150px;
+  height: 50px;
 }
 
 .nav-extras {
@@ -174,7 +178,7 @@ button {
 
 .hero-container {
   background-color: darkcyan;
-  border-radius: 30px;
+  border-radius: 70px;
 }
 
 button {
@@ -205,40 +209,75 @@ button {
   background-color: rgb(255, 255, 68);
   /* padding-top: 0;
   padding-bottom:   10px; */
-  padding: 5px 30px 18px 30px;
-
+  padding: 2px 30px 15px 30px;
 }
 .card-img {
   border-radius: 20px;
 }
 
 .product-deal-card p {
-    color: black;
-    font-size: 13px;
-}
-
-
-.pc-bottom-row button {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
-  font-size: .6em;
-  cursor: pointer;
-  font-family: "League Spartan", sans-serif;
-  border-radius: 50px;
-  border-color: transparent;
-}
-
-
-.old-price{
+  color: black;
   font-size: 13px;
+}
+
+
+
+.old-price {
+  font-size: 18px;
   color: rgb(105, 92, 92);
   text-decoration: line-through;
 }
 
-.new-price{
-  font-size: 18px;
-  color:black;
+.new-price {
+  font-size: 23px;
+  color: black;
   font-weight: bold;
 }
+
+.product-card-icon {
+  background-color: white;
+  color: black;
+  padding: 5%;
+  border-radius: 50%;
+   display: inline-flex; /* Aligns content inside */
+  justify-content: center; 
+  align-items: center; 
+  width: 30px; /* Equal width and height */
+  height: 30px;
+}
+
+
+.product-cart-btn{
+  font-size: 0.9em;
+
+}
+
+.daily-deals-container{
+  background-color: black;
+  border-radius: 70px;
+}
+@media (min-width: 768px) {
+.p-inline-md-6{
+  padding-inline: 120px;
+}
+
+@media (max-width: 768px) {
+  .p-inline-sm-6{
+    padding-inline: 120px;
+  }
+  }
+
+}
+.promo-headline-left-text {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+
+.vertical-line {
+  width: 2px; /* Line thickness */
+  height: 15px; /* Line height */
+  background-color: #b6b4b4d8; /* Line color */
+  display: inline-block;
+}
+

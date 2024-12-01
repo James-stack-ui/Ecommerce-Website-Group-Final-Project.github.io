@@ -1,91 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="profile.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile Update</title>
-</head>
-<body>
-     
-    <div class="container">
-        <h1>Update Your Profile</h1>
-        <form id="updateProfileForm" enctype="multipart/form-data">
-            <div class="field">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Name">
-            </div>
-            <div class="field">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="@email.com" required>
-            </div>
-            <div class="field">
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="field">
-                <label for="photo">Upload Photo:</label>
-                <input type="file" id="photo" name="photo" accept="image/*" required onchange="previewImage(event)">
-            </div>
-            <div class="field">
-                <img id="preview" class="profile-pic" src="#" alt="Profile Picture" style="display: none;">
-            </div>
-            <div class="field">
-                <button type="submit">Update Profile</button>
-            </div>
-        </form>
-    </div>
-    <div id="updatedProfile" class="updated-profile" style="display: none;">
-        <h2>Profile Updated</h2>
-        <img id="updatedPhoto" class="profile-pic" src="#" alt="Updated Profile Picture">
-        <p id="updatedName"></p>
-        <p id="updatedEmail"></p>
-        <p id="updatedPhone"></p>
-    </div>
+    <link rel="stylesheet" href="\css\main.min.css" />
+    <link rel="stylesheet" href="account.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar fixed-top navbar-expand-lg bg-body-tertiary"
+        data-bs-theme="dark"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img
+              src="images/logo.png"
+              alt="Logo"
+              width="50"
+              class="d-inline-block align-text-top"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="shop.html"
+                  >Shop</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="about_us.html"
+                  >About Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="contact.html"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex me-3 py-2" role="search">
+              <div class="input-group">
+                <span class="input-group-text" id="search-icon">
+                  <i class="fa fa-search"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search Today's Offerings"
+                  aria-label="Search"
+                  aria-describedby="search-icon"
+                />
+              </div>
+            </form>
+            <a href="cart.html" class="btn btn-outline-light me-2">
+              <i class="fa-solid fa-cart-shopping"></i> Cart
+            </a>
+            <a href="account.html" class="btn btn-outline-light me-2">
+              <i class="fa-solid fa-user"></i> Account
+            </a>
+            <a class="btn" href="login.html">Logout</a>
+          </div>
+        </div>
+      </nav>
+    </header>
 
+    <main class="mt-5 pt-5">
+      <div class="container d-flex justify-content-center">
+        <div class="column">
+          <h1>Update Your Profile</h1>
+          <form id="updateProfileForm" enctype="multipart/form-data">
+            <div class="field">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Name" />
+            </div>
+            <div class="field">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="@email.com"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="field">
+              <label for="photo">Upload Photo:</label>
+              <input
+                type="file"
+                id="photo"
+                name="photo"
+                accept="image/*"
+                required
+                onchange="previewImage(event)"
+              />
+            </div>
+            <div class="field">
+              <img
+                id="preview"
+                class="profile-pic"
+                src="#"
+                alt="Profile Picture"
+                style="display: none"
+              />
+            </div>
+            <div class="field">
+              <button type="submit">Update Profile</button>
+            </div>
+          </form>
+          <div
+            id="updatedProfile"
+            class="updated-profile"
+            style="display: none"
+          >
+            <h2>Profile Updated</h2>
+            <img
+              id="updatedPhoto"
+              class="profile-pic"
+              src="#"
+              alt="Updated Profile Picture"
+            />
+            <p id="updatedName"></p>
+            <p id="updatedEmail"></p>
+            <p id="updatedPhone"></p>
+          </div>
+        </div>
+      </div>
 
-    <script>
+      <script>
         function previewImage(event) {
-    const preview = document.getElementById('preview');
-    const file = event.target.files[0];
-    const reader = new FileReader();
+          const preview = document.getElementById("preview");
+          const file = event.target.files[0];
+          const reader = new FileReader();
 
-    reader.onload = function() {
-        preview.src = reader.result;
-        preview.style.display = 'block';
-    };
+          reader.onload = function () {
+            preview.src = reader.result;
+            preview.style.display = "block";
+          };
 
-    if (file) {
-        reader.readAsDataURL(file);
-    }
-}
+          if (file) {
+            reader.readAsDataURL(file);
+          }
+        }
 
-document.getElementById('updateProfileForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const form = this;
-    const formData = new FormData(form);
+        document
+          .getElementById("updateProfileForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            const form = this;
+            const formData = new FormData(form);
 
-    
-    document.getElementById('updatedName').textContent = 'Name: ' + formData.get('name');
-    document.getElementById('updatedEmail').textContent = 'Email: ' + formData.get('email');
-    document.getElementById('updatedPhone').textContent = 'Phone: ' + formData.get('phone');
+            document.getElementById("updatedName").textContent =
+              "Name: " + formData.get("name");
+            document.getElementById("updatedEmail").textContent =
+              "Email: " + formData.get("email");
+            document.getElementById("updatedPhone").textContent =
+              "Phone: " + formData.get("phone");
 
-    const file = formData.get('photo');
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function() {
-            document.getElementById('updatedPhoto').src = reader.result;
-        };
-        reader.readAsDataURL(file);
-    }
+            const file = formData.get("photo");
+            if (file) {
+              const reader = new FileReader();
+              reader.onload = function () {
+                document.getElementById("updatedPhoto").src = reader.result;
+              };
+              reader.readAsDataURL(file);
+            }
 
-    document.getElementById('updatedProfile').style.display = 'block';
-});
-    </script>
-
-
-   
-
-
+            document.getElementById("updatedProfile").style.display = "block";
+          });
+      </script>
+    </main>
+  </body>
 </html>
