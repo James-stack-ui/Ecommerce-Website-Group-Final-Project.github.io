@@ -6,7 +6,7 @@ const products = [
       "category": "Deal",
       "old_price": 120.0,
       "new_price": 100.0,
-      "image": "images/shoes1.jpg"
+      "image": "images/Nike Air Max.png"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@ const products = [
       "category": "Shoes",
       "old_price": 180.0,
       "new_price": 150.0,
-      "image": "images/shoes2.jpg"
+      "image": "images/Adidas Ultraboost.png"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@ const products = [
       "category": "Shoes",
       "old_price": 110.0,
       "new_price": 90.0,
-      "image": "images/shoes3.jpg"
+      "image": "images/Puma RS-X.png"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@ const products = [
       "category": "Shoes",
       "old_price": 100.0,
       "new_price": 80.0,
-      "image": "images/shoes4.jpg"
+      "image": "images/Reebok Classic.png"
     },
     
     {
@@ -39,7 +39,7 @@ const products = [
       "category": "Deal",
       "old_price": 80.0,
       "new_price": 70.0,
-      "image": "images/male_clothes1.jpg"
+      "image": "images/Levi_Denim_Jacket_(Male).png"
     },
     {
       "id": 8,
@@ -47,7 +47,7 @@ const products = [
       "category": "Deal",
       "old_price": 70.0,
       "new_price": 60.0,
-      "image": "images/male_clothes2.jpg"
+      "image": "images/Ralph Lauren Polo (Male).png"
     },
  
     {
@@ -56,7 +56,7 @@ const products = [
       "category": "Clothes",
       "old_price": 300.0,
       "new_price": 250.0,
-      "image": "images/female_clothes1.jpg"
+      "image": "images/Gucci Dress (Female).png"
     },
     {
       "id": 11,
@@ -64,7 +64,7 @@ const products = [
       "category": "Clothes",
       "old_price": 200.0,
       "new_price": 180.0,
-      "image": "images/female_clothes2.jpg"
+      "image": "images/Chanel Blouse (Female).png"
     },
     {
       "id": 12,
@@ -72,7 +72,7 @@ const products = [
       "category": "Clothes",
       "old_price": 80.0,
       "new_price": 65.0,
-      "image": "images/female_clothes3.jpg"
+      "image": "images/Zara Skirt (Female).png"
     }
   ]
   ;
