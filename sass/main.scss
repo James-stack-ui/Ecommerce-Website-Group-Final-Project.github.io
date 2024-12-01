@@ -1,0 +1,28 @@
+// Step 1: Define custom color variables
+$primary: #4CAF50; /* Forest Green */
+$secondary: #2B3034; /* Teal */
+$success: #2ecc71; /* Green */
+$danger: #e74c3c; /* Red */
+$warning: #f1c40f; /* Yellow */
+$info: #1abc9c; /* Turquoise */
+$light: #f8f9fa; /* Light Gray */
+$dark: #2c3e50; /* Dark Gray */
+
+
+// // Step 2: Optionally override other Bootstrap variables
+$body-bg: #2c3e50; /* Dark Background for a dark theme */
+$headings-color: #ffffff; // Change default color for all h1 - h6 tags
+$card-bg: #f8f9fa; 
+$card-color: #343a40; // Card text Color styling
+
+$body-color: #ffffff; /* Light Sand Text for readability on dark background */
+$font-family-base: 'Montserrat', sans-serif; /* Custom font */
+// Set custom font families
+$headings-font-family: 'League Spartan', sans-serif;     
+
+$carousel-caption-bg: rgba(215, 15, 15, 0.5); // Semi-transparent black
+
+// Step 3: Import Bootstrap’s core files
+// Import Bootstrap functions first
+@import "../node_modules/bootstrap/scss/bootstrap";
+

@@ -1,0 +1,1150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--AOS cdn-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Menu</title>
+    <style>
+    
+
+        .navbar{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            padding: 0 10vw;
+            z-index: 9;
+            background: #c4c708;
+        }
+
+        .nav-toggler{
+            display: none;
+        }
+
+        .logo{
+            height: 1.5rem;
+        }
+
+        .links-container{
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            margin-left: 7.5%;
+        }
+
+        .links{
+            color: #141414;
+            text-decoration: none;
+            text-transform: none;
+            padding: .5rem 1rem;
+            transition: .2s;
+        }
+
+        .links:hover{
+            color: #2e9c12;
+        }
+
+        /* .nav-extras{
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            gap: 1rem;
+        } */
+
+        /* .search{
+            position: relative;
+            width: 20vw;
+            min-width: 150px;
+            height: 2.5rem;
+            border-radius: .5rem;
+            overflow: hidden;
+        }
+
+        .search-box{
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border: none;
+            padding: 1rem;
+            outline: none;
+            font-size: .9rem;
+        } */
+
+        /* .search-btn{
+            position: absolute;
+            border: none;
+            right: 0;
+            width: 3rem;
+            height: 100%;
+            background: #fff;
+            text-align: center;
+            cursor: pointer;
+            color: #2e9c12;
+        } */
+
+        /* .cart, .account{
+            width: 2.5rem;
+            height: 2.5rem;
+            color: #2e9c12;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: .5s;
+        } */
+        
+        
+        /* .cart:hover, .locate-btn:hover, .account:hover{
+            background: var(--alpha-secondary-color);            
+        } */
+
+        /* .cart-container {
+        position: relative;
+        display: inline-block;
+        }
+
+        #cart-text-icon {
+            position: absolute;
+            top: 120%; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #007676;
+            color: var(--card-hover-bg-color);
+            white-space: nowrap;
+            padding: 10px 15px;
+            border-radius: 7px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .cart-container:hover #cart-text-icon {
+            visibility: visible;
+            opacity: 1;
+        } */
+
+        /* .account-container {
+            position: relative;
+            display: inline-block;
+        } */
+
+        /* #account-text-icon {
+            position: absolute;
+            top: 120%; /* Positions below the account icon */
+            /* left: 50%;
+            transform: translateX(-50%);
+            background-color: #007676; /* Adjust color as needed */
+            /* color: var(--card-hover-bg-color); /* Text color */
+            /* white-space: nowrap; */
+            /* padding: 10px 15px; */
+            /* border-radius: 7px; */
+            /* visibility: hidden; */
+            /* opacity: 0; */
+            /* transition: opacity 0.5s ease; */ */ */
+        /* }  */
+
+        /* .account-container:hover #account-text-icon {
+            visibility: visible;
+            opacity: 1;
+        } */
+
+        body{
+            background-color: #fff;
+            font-family: 'Lato', sans-serif;
+        }
+        .container{
+            width: 90vw;
+            margin: auto;
+            transition: 0.5s;
+        }
+        header{
+            display: grid;
+            grid-template-columns: 1fr 50px;
+            margin-top: 50px;
+        }
+        header .shopping{
+            position: relative;
+            text-align: right;
+        }
+        header .shopping img{
+            width: 40px;
+        }
+        header .shopping span{
+            background: var(--discount-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            position: absolute;
+            top: -5px;
+            left: 80%;
+            padding: 3px 10px;
+        }
+        .list{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 25px;
+            row-gap: 25px;
+            margin-top: 50px;
+        }
+        .list .item{
+            text-align: center;
+            background-color: var(--alpha-secondary-color);
+            padding: 20px;
+            box-shadow: 0 50px 50px var(--box-shadow-color);
+            letter-spacing: 1px;
+        }
+        .list .item img{
+            width: 90%;
+            object-fit: cover;
+        }
+        .list .item .title{
+            font-weight: 800;
+            color:#2e9c12;
+        }
+        .list .item .price{
+            margin: 10px;
+        }
+        .list .item button{
+            background-color: #007676;
+            border: none;
+            color: #fff;
+            width: 100%;
+            padding: 10px;
+        }
+        .card{
+            position: fixed;
+            top:0;
+            left: 100%;
+            width: 500px;
+            background-color: #007676;
+            height: 100vh;
+            transition: 0.5s;
+        }
+        .active .card{
+            left: calc(100% - 500px);
+        }
+        .active .container{
+        transform: translateX(-200px);
+        }
+        .card h1{
+            color: var(--rating-color);
+            font-weight: 800;
+            margin: 0;
+            padding: 10px 20px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+        .card .checkOut{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+        .card .checkOut div{
+            background-color: var(--rating-color);
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .card .checkOut div:nth-child(2){
+            background-color: #141414;
+            color: #fff;
+        }
+        .listCard li{
+            display: grid;
+            grid-template-columns: 100px repeat(3, 1fr);
+            color: #fff;
+            row-gap: 10px;
+        }
+        .listCard li div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .listCard li img{
+            width: 90%;
+        }
+        .listCard li button{
+            background-color: #fff5;
+            border: none;
+        }
+        .listCard .count{
+            margin: 0 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        
+
+        html{
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        body{
+            font-family: 'Lato', sans-serif;
+            color: #141414;
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        /*navbar styles*/
+        .navbar{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            padding: 0 10vw;
+            z-index: 9;
+            background: #c4c708;
+        }
+
+        .nav-toggler{
+            display: none;
+        }
+
+        .logo{
+            height: 1.5rem;
+        }
+
+        .links-container{
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            margin-left: 7.5%;
+        }
+
+        .links{
+            color:#141414;
+            text-decoration: none;
+            text-transform: none;
+            padding: .5rem 1rem;
+            transition: .2s;
+        }
+
+        .links:hover{
+            color:#2e9c12;
+        }
+
+        .nav-extras{
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            gap: 1rem;
+        }
+
+        .search{
+            position: relative;
+            width: 20vw;
+            min-width: 150px;
+            height: 2.5rem;
+            border-radius: .5rem;
+            overflow: hidden;
+        }
+
+        /* .search-box{
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border: none;
+            padding: 1rem;
+            outline: none;
+            font-size: .9rem;
+        } */
+
+        /* .search-btn{
+            position: absolute;
+            border: none;
+            right: 0;
+            width: 3rem;
+            height: 100%;
+            background: #fff;
+            text-align: center;
+            cursor: pointer;
+            color: #2e9c12;
+        } */
+
+        .cart, .account{
+            width: 2.5rem;
+            height: 2.5rem;
+            color:#2e9c12;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: .5s;
+        }
+        
+        
+        .cart:hover, .locate-btn:hover, .account:hover{
+            background: var(--alpha-secondary-color);            
+        }
+
+        .cart-container {
+        position: relative;
+        display: inline-block;
+        }
+
+        #cart-text-icon {
+            position: absolute;
+            top: 120%; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #007676;
+            color: var(--card-hover-bg-color);
+            white-space: nowrap;
+            padding: 10px 15px;
+            border-radius: 7px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .cart-container:hover #cart-text-icon {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* .account-container {
+            position: relative;
+            display: inline-block;
+        } */
+
+        /* #account-text-icon {
+            position: absolute;
+            top: 120%; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #007676;
+            color: var(--card-hover-bg-color); 
+            white-space: nowrap;
+            padding: 10px 15px;
+            border-radius: 7px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        } */
+
+        /* .account-container:hover #account-text-icon {
+            visibility: visible;
+            opacity: 1;
+        } */
+
+        
+       
+        #hero-section{
+            min-height: 100vh;
+            padding: 0 10vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #c4c708;
+        }
+
+        .hero-content{
+            width: 40%;
+        }
+
+        .hero-heading{
+            font-size: 4rem;
+            line-height: 5rem;
+            font-weight: 700;
+            color: #2e9c12;
+        }
+
+        .hero-line{
+            line-height: 2rem;
+            opacity: 0.75;
+            margin-top: 2rem;
+        }
+
+        .search.location{
+            width: 100%;
+            height: 3.5rem;
+            border-radius: .2rem;
+            margin: 2.5rem 0;
+        }
+
+        .locate-btn{
+            font-size: 1.2rem;
+            width: 4rem;
+            transition: .5s;
+        }
+
+        .search.location .search-box{
+            padding: 1rem 1.5rem;
+        }
+
+        .hero-action-btn-container{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .btn{
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: .3rem;
+            font-size: 1rem;
+            color: #fff;
+            background: #007676;
+            text-transform: capitalize;
+            cursor: pointer;
+        }
+
+        .btn.transparent{
+            background: transparent;
+            border: .1rem solid#007676;
+            color: #2e9c12;
+        }
+
+        .hero-action-btn-container .or{
+            color: #2e9c12;
+        }
+
+        .hero-img-container, .food-image-container{
+            min-width: 30rem;
+            min-height: 30rem;
+            position: relative;
+            transform: scale(0.85) translateY(1rem);
+        }
+
+        .background-ele, .foreground-elements{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .ellipse{
+            position: absolute;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            border-radius: 100%;
+            border: .01rem solid #007676;
+            transform-origin: center;
+        }
+
+        .ellipse:nth-child(1){
+            width: 80%;
+            transform: translate(-50%, -50%) rotate(20deg);
+        }
+
+        .ellipse:nth-child(2){
+            width: 90%;
+            transform: translate(-50%, -50%) rotate(40deg);
+        }
+        
+        .ellipse:nth-child(3){
+            width: 90%;
+            transform: translate(-50%, -50%) rotate(-20deg);
+        }
+
+        .hero-img{
+            position: absolute;
+            width: 10rem;
+            border-radius: 100%;
+            box-shadow: 0 1rem 1rem var(--shadow);
+        }
+        
+        .hero-img:nth-child(1){
+            width: 20rem;
+            left: -8%;
+            top: -15%;
+        }
+
+        .hero-img:nth-child(2){
+            width: 15rem;
+            right: -15%;
+            top: 15%;
+        }
+
+        .hero-img:nth-child(3){
+            width: 15rem;
+            left: 35%;
+            bottom: -20%;
+        }
+
+        .review-box{
+            position: absolute;
+            width: 30rem;
+            padding: 1rem 2rem;
+            bottom: 5%;
+            left: -25%;
+            border-radius: .5rem;
+            background: var(--alpha-primary-color);
+            backdrop-filter: blur(.5rem);
+        }
+
+        .reviewer-info{
+            display: flex;
+            gap: 1rem;
+        }
+
+        .reviewer-img{
+            width: 3rem;
+            height: 3rem;
+            border-radius: 100%;
+        }
+
+        .reviewer-rating{
+            display: flex;
+            gap: .1rem;
+            font-size: .7rem;
+            align-items: center;
+        }
+
+        .reviewer-rating i{
+            color: var(--rating-color);
+        }
+
+        .reviewer-name{
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin-top: .75rem;
+        }
+
+        .review-body{
+            display: flex;
+            gap: 1rem;
+            margin-top: .5rem;
+            padding: 1rem 0;
+        }
+
+        .review-body i{
+            font-size: 1.4rem;
+            color: #2e9c12;
+        }
+
+        .review{
+            line-height: 1.75rem;
+        }
+
+        /*restaurant section*/
+        .section{
+            width: 100%;
+            padding: 2rem 0 5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-detail{
+            width: 45%;
+            min-width: 300px;
+            margin-left: auto;
+        }
+
+        .section-highlight{
+            padding: .5rem 1rem;
+            border-radius: .2rem;
+            background: var(--alpha-secondary-color);
+            color: #007676;
+        }
+
+        .section-title{
+            margin: 2rem 0;
+            font-size: 4rem;
+        }
+
+        .section-info{
+            line-height: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        section{
+            position: relative;
+            padding: 6rem 10vw;
+        }
+
+        .food-image-container{
+            transform: scale(0.8);
+        }
+
+        .circle{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            border-radius: 100%;
+            transform: translate(-50%,-50%) scale(0.8);
+            background: #fff;
+            border: .1rem solid #007676;
+        }
+
+        .circle span{
+            position: absolute;
+            width: .75rem;
+            height: .75rem;
+            border-radius: 100%;
+            background: #007676;
+            transform: translate(-50%,-50%);
+        }
+
+        .circle span:nth-child(1){
+            top: 0;
+            left: 50%;
+        }
+
+        .circle span:nth-child(2){
+            top: 30%;
+            left: 4%;
+        }
+
+        .circle span:nth-child(3){
+            top: 30%;
+            right: 1.5%;
+        }
+
+        .circle span:nth-child(4){
+            bottom: 30%;
+            left: 3%;
+        }
+
+        .circle span:nth-child(5){
+            bottom: 30%;
+            right: .5%;
+        }
+
+        .circle span:nth-child(6){
+            bottom: -2.5%;
+            left: 50%;
+        }
+
+        .circle:nth-child(2){
+            background: var(--alpha-secondary-color);
+            z-index: -1;
+            transform: translate(-50%, -50%) scale(1) rotate(30deg);
+        }
+
+        .food-img{
+            position: absolute;
+            border-radius: 100%;
+            box-shadow: 0 1rem 1rem var(--shadow);
+            width: 10rem;
+            transform: translate(-50%, -50%);
+        }
+
+        .food-img:nth-child(1){
+            width: 20rem;
+            top: 50%;
+            left: 50%;
+        }
+
+        .food-img:nth-child(2){
+            width: 12rem;
+            top: 15%;
+            left: 100%;
+        }
+
+        .food-img:nth-child(3){
+            width: 10rem;
+            top: 60%;
+            left: 107%;
+        }
+
+        .food-img:nth-child(4){
+            width: 8rem;
+            top: 95%;
+            left: 80%;
+        }
+
+        .food-img:nth-child(5){
+            width: 6rem;
+            top: 100%;
+            left: 40%;
+        }
+
+        .food-img:nth-child(6){
+            width: 4rem;
+            top: 80%;
+            left: 10%;
+        }
+
+        .food-img:nth-child(7){
+            width: 2rem;
+            top: 55%;
+            left: 0;
+        }
+
+        .restaurants-container{
+            margin-top: 5rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .restaurant{
+            position: relative;
+            width: 100%;
+            padding: 1rem;
+            border-radius: .5rem;
+            border: .1rem solid var(--border-color);
+        }
+
+        
+
+        .restaurant-thumbnail{
+            position: relative;
+            width: 100%;
+            height: 15rem;
+            overflow: hidden;
+            border-radius: .5rem;
+        }
+        
+        .restaurant-img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: .25rem;
+            transition: transform .5s var(--transition-curve);
+        }
+
+        .restaurant:hover .restaurant-img{
+            transform: scale(1.1);
+        }
+
+        .restaurant-body{
+            margin: 2rem 0 1rem;
+            position: relative;
+        }
+
+        .restaurant-name{
+            font-size: 1.2rem;
+            text-transform: capitalize;
+            font-weight: 400;
+            margin: 1rem 0;
+        }
+
+        .menu{
+            width: 80%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin: 1rem 0;
+        }
+
+        #footer{
+            position: relative;
+            padding: 4rem 10vw 8rem;
+            display: flex;
+            gap: 5%;
+            background: #c4c708;
+        }
+        .company-info .logo{
+            height: 3rem;
+            margin-bottom: 2rem;
+        }
+        .social-links{
+            display: flex;
+            gap: 1rem;
+        }
+        .social-links a{
+            width: 3rem;
+            height: 3rem;
+            padding: .5rem;
+            border-radius: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #141414;
+            font-size: 1.5rem;
+            transition: .5s;
+        }
+        .footer-links-container{
+            margin-left:auto ;
+        }
+        .footer-links-container .contact{
+            width: 20%;
+        }
+        .footer-links-title{
+            text-transform: capitalize;
+            margin-bottom: 1rem;
+            color: #2e9c12;
+        }
+        .footer-links, .footer-text{
+            color: #141414;
+            text-decoration: none;
+            margin-bottom: .5rem;
+            line-height: 1.5rem;
+            display: block;
+            opacity: 0.75;
+            text-transform: capitalize;
+        }
+
+        
+        .payment-partners{
+            position: absolute;
+            display: flex;
+            gap: 1rem;
+            right: 10vw;
+            bottom: 20%;
+        }
+
+        .payment-partners img{
+            height: 2rem;
+        }
+
+        .payment-partners-text{
+            position: absolute;
+            bottom: 12%;
+            right: 10vw;
+            font-size: .8rem;
+            opacity: 0.5;
+        }
+        
+        .copyright{
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            text-align: center;
+            padding: .5rem;
+            color:#fff;
+            background: #007676;
+        }
+
+    </style>
+</head>
+<header>
+        <!--Navbar-->
+        <nav class="navbar">
+
+            <!--logo-->
+            <img src="Images/shopping logo.webp" class="logo" alt="">
+            <!--ul-->
+            <ul class="links-container">
+                <li class="link-items"><a href="menu.html" class="links">Index</a></li>
+                <li class="link-items"><a href="#" class="links">About us</a></li>
+                <li class="link-items"><a href="#" class="links">Contact</a></li>
+                <li class="link-items"><a href="#" class="links">Nickala made this</a></li>
+            </ul>
+    
+            <!--Search box-->
+            <div class="nav-extras">
+                <div class="search">
+                    <input type="text" class="search-box" placeholder="Search Today's Offerings">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <!--Cart icon-->
+                <div class="cart-container">
+                    <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <span id="cart-text-icon">Cart</span>                                
+                </div>
+                <!--Account icon-->
+                <div class="account-container">
+                    <a href ="login.html" class="account"><i class="fa-solid fa-user"></i></a>
+                    <span id="account-text-icon">Account</span>
+                </div>
+                
+                
+    
+                <!-- <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href ="login.html" class="account"><i class="fa-solid fa-user"></i></a> -->
+    
+                <div class="nav-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+    
+        </nav>
+    </header>
+<body class="">
+    
+    
+    <div class="container">
+        <header>
+            <h1>Your Shopping Cart</h1>
+            <div class="shopping">
+                <img src="Images/Cart.jpg">
+                <span class="quantity">0</span>
+            </div>
+        </header>
+
+        <div class="list">
+          
+        </div>
+    </div>
+    <div class="card">
+        <h1>Card</h1>
+        <ul class="listCard">
+        </ul>
+        <div class="checkOut">
+            <div class="total">0</div>
+            <div class="closeShopping">Close</div>
+        </div>
+    </div>
+
+    <section id="footer">
+
+        <div class="company-info">
+            <img src="Images/shopping logo.webp" class="logo" alt=""> 
+    
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    
+        
+        <div class="contact footer-links-container">
+            <h5 class="footer-links-title">Contact Us</h5>
+            <p class="footer-text">We are located on Northern Caribbean Universtiy's main campus</p>
+            <p class="footer-text">Phone: +1 876 000-0000</p>
+            <p class="footer-text">Email:  help@shopwithus.com</p>
+        </div>
+    
+    
+    
+        </section>
+
+    <script>
+        let openShopping = document.querySelector('.shopping');
+        let closeShopping = document.querySelector('.closeShopping');
+        let list = document.querySelector('.list');
+        let listCard = document.querySelector('.listCard');
+        let body = document.querySelector('body');
+        let total = document.querySelector('.total');
+        let quantity = document.querySelector('.quantity');
+
+        openShopping.addEventListener('click', ()=>{
+            body.classList.add('active');
+        })
+        closeShopping.addEventListener('click', ()=>{
+            body.classList.remove('active');
+        })
+
+        let products = [
+            {
+                id: 1,
+                name: 'PRODUCT NAME 1',
+                image: "image1.jpg",
+                price: 120
+            },
+            {
+                id: 2,
+                name: 'PRODUCT NAME 2',
+                image: 'image2.jpg',
+                price: 120
+            },
+            {
+                id: 3,
+                name: 'PRODUCT NAME 3',
+                image: 'image3.jpg',
+                price: 220
+            },
+            {
+                id: 4,
+                name: 'PRODUCT NAME 4',
+                image: 'image4.jpg',
+                price: 123
+            },
+            {
+                id: 5,
+                name: 'PRODUCT NAME 5',
+                image: 'image5.jpg',
+                price: 320
+            },
+            {
+                id: 6,
+                name: 'PRODUCT NAME 6',
+                image: 'image9.jpg',
+                price: 120
+            }
+        ];
+        let listCards  = [];
+        function initApp(){
+            products.forEach((value, key) =>{
+                let newDiv = document.createElement('div');
+                newDiv.classList.add('item');
+                newDiv.innerHTML = `
+                    <img src="Images/${value.image}">
+                    <div class="title">${value.name}</div>
+                    <div class="price">${value.price.toLocaleString()}</div>
+                    <button onclick="addToCard(${key})">Add To Cart</button>`;
+                list.appendChild(newDiv);
+            })
+        }
+        initApp();
+        function addToCard(key){
+            if(listCards[key] == null){
+                // copy product form list to list card
+                listCards[key] = JSON.parse(JSON.stringify(products[key]));
+                listCards[key].quantity = 1;
+            }
+            reloadCard();
+        }
+        function reloadCard(){
+            listCard.innerHTML = '';
+            let count = 0;
+            let totalPrice = 0;
+            listCards.forEach((value, key)=>{
+                totalPrice = totalPrice + value.price;
+                count = count + value.quantity;
+                if(value != null){
+                    let newDiv = document.createElement('li');
+                    newDiv.innerHTML = `
+                        <div><img src="img/${value.image}"/></div>
+                        <div>${value.name}</div>
+                        <div>${value.price.toLocaleString()}</div>
+                        <div>
+                            <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                            <div class="count">${value.quantity}</div>
+                            <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                        </div>`;
+                        listCard.appendChild(newDiv);
+                }
+            })
+            total.innerText = totalPrice.toLocaleString();
+            quantity.innerText = count;
+        }
+        function changeQuantity(key, quantity){
+            if(quantity == 0){
+                delete listCards[key];
+            }else{
+                listCards[key].quantity = quantity;
+                listCards[key].price = quantity * products[key].price;
+            }
+            reloadCard();
+        }
+
+    </script>
+
+</body>
+</html>

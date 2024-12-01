@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - Online Shopping</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom Styles -->
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .form-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Sign Up</h2>
+      <p>
+        Already have an account?
+        <a href="login.html" style="color: blue">Login</a>
+      </p>
+      <form id="registrationForm">
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullName" required />
+          <div class="invalid-feedback">Full name is required.</div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" required />
+          <div class="invalid-feedback">
+            Please enter a valid email address.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" required />
+          <div class="invalid-feedback">Password is required.</div>
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label"
+            >Confirm Password</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="confirmPassword"
+            required
+          />
+          <div class="invalid-feedback">Please confirm your password.</div>
+        </div>
+        <div class="mb-3 form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="termsCheck"
+            required
+          />
+          <label class="form-check-label" for="termsCheck"
+            >I agree to the terms and conditions</label
+          >
+          <div class="invalid-feedback">
+            You must agree to the terms and conditions.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Register</button>
+      </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // JavaScript form validation and redirection
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Clear previous error messages
+          let form = event.target;
+          let inputs = form.querySelectorAll("input");
+          let isValid = true;
+
+          // Loop through inputs to validate
+          inputs.forEach((input) => {
+            if (!input.validity.valid) {
+              input.classList.add("is-invalid");
+              isValid = false;
+            } else {
+              input.classList.remove("is-invalid");
+            }
+          });
+
+          // Check if passwords match
+          const password = document.getElementById("password").value;
+          const confirmPassword =
+            document.getElementById("confirmPassword").value;
+          if (password !== confirmPassword) {
+            document
+              .getElementById("confirmPassword")
+              .classList.add("is-invalid");
+            isValid = false;
+          } else {
+            document
+              .getElementById("confirmPassword")
+              .classList.remove("is-invalid");
+          }
+
+          // If form is valid, proceed
+          if (isValid) {
+            alert("Registration successful! Redirecting to home page...");
+            form.reset();
+            // Redirect to home page
+            window.location.href = "home.html";
+          } else {
+            alert("Please fill out the form correctly.");
+          }
+        });
+    </script>
+  </body>
+</html>

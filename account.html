@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <title>Profile Update</title>
+</head>
+<body>
+     
+    <div class="container">
+        <h1>Update Your Profile</h1>
+        <form id="updateProfileForm" enctype="multipart/form-data">
+            <div class="field">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Name">
+            </div>
+            <div class="field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="@email.com" required>
+            </div>
+            <div class="field">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="field">
+                <label for="photo">Upload Photo:</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required onchange="previewImage(event)">
+            </div>
+            <div class="field">
+                <img id="preview" class="profile-pic" src="#" alt="Profile Picture" style="display: none;">
+            </div>
+            <div class="field">
+                <button type="submit">Update Profile</button>
+            </div>
+        </form>
+    </div>
+    <div id="updatedProfile" class="updated-profile" style="display: none;">
+        <h2>Profile Updated</h2>
+        <img id="updatedPhoto" class="profile-pic" src="#" alt="Updated Profile Picture">
+        <p id="updatedName"></p>
+        <p id="updatedEmail"></p>
+        <p id="updatedPhone"></p>
+    </div>
+
+
+
+    <script>
+        function previewImage(event) {
+    const preview = document.getElementById('preview');
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function() {
+        preview.src = reader.result;
+        preview.style.display = 'block';
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
+
+document.getElementById('updateProfileForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const form = this;
+    const formData = new FormData(form);
+
+    
+    document.getElementById('updatedName').textContent = 'Name: ' + formData.get('name');
+    document.getElementById('updatedEmail').textContent = 'Email: ' + formData.get('email');
+    document.getElementById('updatedPhone').textContent = 'Phone: ' + formData.get('phone');
+
+    const file = formData.get('photo');
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function() {
+            document.getElementById('updatedPhoto').src = reader.result;
+        };
+        reader.readAsDataURL(file);
+    }
+
+    document.getElementById('updatedProfile').style.display = 'block';
+});
+    </script>
+
+
+   
+
+
+</html>

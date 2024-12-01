@@ -1,0 +1,244 @@
+:root {
+  --product-deal-card-vertical-padding: 30px;
+  --product-deal-card-horizontal-padding: 20px;
+}
+
+/* Ensure the carousel covers the entire background */
+.carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Keep carousel behind the login form */
+}
+
+/* Card styles */
+.card {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #007bff;
+}
+
+/* Transparency for login form */
+.card {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.85
+  ); /* Slight transparency to blend with background */
+}
+
+/* Optional: Adjust carousel image height */
+/* Preventing image blur in carousel */
+
+.carousel-inner img {
+  object-fit: cover; /* Ensures the image scales properly without distortion */
+  height: 100vh; /* Make sure the image fills the viewport */
+  width: 100%; /* Ensure it takes up the full width */
+}
+
+/* Optional: Set the images to a higher resolution for better quality */
+.carousel-item img {
+  object-fit: cover;
+  height: 100vh;
+  width: 100%;
+}
+/* Style for cart items */
+#cartItems .list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style for the total price */
+#totalPrice {
+  font-weight: bold;
+}
+
+/* Add a bit of padding for the buttons */
+button {
+  padding: 0.3rem 1rem;
+}
+
+/* Styles I added */
+
+.brand-logo {
+  width: 100px;
+}
+
+.nav-extras {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 1rem;
+}
+
+.search {
+  position: relative;
+  width: 20vw;
+  min-width: 150px;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.search-box {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: black;
+  border: none;
+  padding: 1rem;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.search-btn {
+  position: absolute;
+  border: none;
+  right: 0;
+  width: 3rem;
+  height: 100%;
+  background: #fff;
+  text-align: center;
+  cursor: pointer;
+  color: #2e9c12;
+}
+
+/* User Account */
+
+.account-container {
+  position: relative;
+  display: inline-block;
+}
+
+.account-container:hover #account-text-icon {
+  visibility: visible;
+  opacity: 1;
+}
+
+.account-container:hover #account-text-icon {
+  visibility: visible;
+  opacity: 1;
+}
+
+.account-container:hover #account-text-icon {
+  visibility: visible;
+  opacity: 1;
+}
+
+#account-text-icon {
+  position: absolute;
+  top: 120%; /* Positions below the account icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #007676; /* Adjust color as needed */
+  color: var(--card-hover-bg-color); /* Text color */
+  white-space: nowrap;
+  padding: 10px 15px;
+  border-radius: 7px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Cat */
+.cart-container {
+  position: relative;
+  display: inline-block;
+}
+
+#cart-text-icon {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #007676;
+  color: var(--card-hover-bg-color);
+  white-space: nowrap;
+  padding: 10px 15px;
+  border-radius: 7px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.cart-container:hover #cart-text-icon {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hero-container {
+  background-color: darkcyan;
+  border-radius: 30px;
+}
+
+button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  cursor: pointer;
+  font-family: "League Spartan", sans-serif;
+  border-radius: 50px;
+  border-color: transparent;
+}
+
+/* Product Card */
+
+.product-deal-card {
+  border-radius: 70px;
+  overflow: hidden;
+  /* padding: 20px; */
+  background-color: rgb(253, 253, 143);
+}
+/* .pc-top-row {
+  padding: var(--product-deal-card-vertical-padding)
+    var(--product-deal-card-horizontal-padding);
+} */
+
+.pc-bottom-row {
+  background-color: rgb(255, 255, 68);
+  /* padding-top: 0;
+  padding-bottom:   10px; */
+  padding: 5px 30px 18px 30px;
+
+}
+.card-img {
+  border-radius: 20px;
+}
+
+.product-deal-card p {
+    color: black;
+    font-size: 13px;
+}
+
+
+.pc-bottom-row button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: .6em;
+  cursor: pointer;
+  font-family: "League Spartan", sans-serif;
+  border-radius: 50px;
+  border-color: transparent;
+}
+
+
+.old-price{
+  font-size: 13px;
+  color: rgb(105, 92, 92);
+  text-decoration: line-through;
+}
+
+.new-price{
+  font-size: 18px;
+  color:black;
+  font-weight: bold;
+}
