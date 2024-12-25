@@ -46,16 +46,7 @@ As the **Project Lead**, I was responsible for:
 ---
 
 ## **Live Demo**
-[Visit the Website Demo](#) *(Replace with link to GitHub Pages or live demo)*
-
----
-
-## **Team Members**
-- **James Barrett** – *Project Lead*: Designed Home & About Us pages, applied website-wide styles, and ensured task completion.  
-- **Tyrone** – Contact Us & FAQ page.  
-- **Nickala** – Products/Services page.  
-- **Daniel** – Login & Online Cart pages.  
-- **Albert** – Registration page.  
+[Visit the Website Demo](#) *(Replace with link to GitHub Pages or live demo)*  
 
 ---
 
