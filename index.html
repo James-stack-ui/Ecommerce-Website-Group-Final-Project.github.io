@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/main.min.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -26,14 +26,7 @@
         data-bs-theme="dark"
       >
         <div class="container">
-          <a class="navbar-brand" href="#">
-            <img
-              src="images/logo.png"
-              alt="Logo"
-              width="50"
-              class="d-inline-block align-text-top"
-            />
-          </a>
+     
           <button
             class="navbar-toggler"
             type="button"
@@ -53,25 +46,13 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="shop.html"
-                  >Shop</a
-                >
+                <a class="nav-link" href="shop.html">Shop</a>
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="about_us.html"
-                  >About Us</a
-                >
+                <a class="nav-link" href="about_us.html">About Us</a>
               </li>
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="contact.html"
-                  >Contact Us</a
-                >
+                <a class="nav-link" href="contact.html">Contact Us</a>
               </li>
             </ul>
             <form class="d-flex me-3 py-2" role="search">
@@ -108,9 +89,11 @@
             <p>LIVE FOR FASHION</p>
             <h1>Fashion Up Your Look</h1>
             <p>
-              Discover the latest trends in clothing, handpicked for style and comfort. Shop now and elevate your wardrobe with our exclusive collection.
+              Discover the latest trends in clothing, handpicked for style and
+              comfort. Shop now and elevate your wardrobe with our exclusive
+              collection.
             </p>
-            <button  onclick="location.href='shop.html'">Shop Now</button>
+            <button onclick="location.href='shop.html'">Shop Now</button>
           </div>
           <div class="col-md-6 col-12 d-flex flex-column justify-content-end">
             <img
@@ -126,52 +109,70 @@
       <section>
         <div class="row justify-content-around px-5 py-5 g-3">
           <img src="images/reebok.png" alt="Reebok Logo" class="brand-logo" />
-          <img src="images/levi_brand.png" alt="Reebok Logo" class="brand-logo" />
-          <img src="images/Nike-Logo.jpg" alt="Reebok Logo" class="brand-logo" />
-          <img src="images/gucci.jpg" alt="Reebok Logo" class="brand-logo" />
+          <img
+            src="images/levi_brand.png"
+            alt="Levi's Logo"
+            class="brand-logo"
+          />
+          <img src="images/Nike-Logo.jpg" alt="Nike Logo" class="brand-logo" />
+          <img src="images/gucci.jpg" alt="Gucci Logo" class="brand-logo" />
+        </div>
+      </section>
+
+      <!-- Daily Deals Section -->
+      <section class="container py-5 daily-deals-container">
+        <div class="row p-inline-md-6 px-5 pb-3">
+          <div class="promo-headline d-flex align-items-center">
+            <span class="promo-headline-left-text me-3">Daily Deals</span>
+            <div
+              class="border-start"
+              style="height: 20px; margin: 0 10px"
+            ></div>
+            <a href="shop.html" class="promo-headline-right-text btn">
+              Continue to Shop <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
         </div>
 
-        <!-- Daily Deals Section -->
-        <div class="container py-5 daily-deals-container">
-          <div class="row p-inline-md-6 px-5 pb-3">
-            <div class="promo-headline d-flex align-items-center">
-              <span class="promo-headline-left-text me-3">Daily Deals</span>
-              <div class="border-start" style="height: 20px; margin: 0 10px"></div>
-              <a href="shop.html" class="promo-headline-right-text btn ">
-                Continue to Shop <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-          
-          <div class="row justify-content-center gap-4" id="product-list ">
+        <div class="row justify-content-center gap-4" id="product-list">
+          <!-- Product cards will be dynamically added here -->
+          <div class="row justify-content-center gap-4" id="deal-row">
+            <!-- Shoes Row -->
             <!-- Product cards will be dynamically added here -->
-            <div class="row justify-content-center gap-4" id="product-list">
-              <!-- Product cards will be dynamically added here -->
-              <!-- Shoes Row -->
-              <div
-                class="row  justify-content-center gap-4"
-                id="deal-row"
-              ></div>
-            </div>
+          </div>
         </div>
       </section>
     </main>
- <!-- Footer with Social Media Icons -->
- <footer class="bg-secondary  text-white text-center p-4 mt-auto " >  <div class="container">
-  <p>Follow us on social media:</p>
-  <a href="https://www.facebook.com/boohoo.com" target="_blank" class="text-white mx-3">
-    <i class="fab fa-facebook"></i>
-  </a>
-  <a href="https://www.youtube.com/c/boohoo" target="_blank" class="text-white mx-3">
-    <i class="fab fa-youtube"></i>
-  </a>
-  <a href="https://www.instagram.com/boohoo/"  target="_blank" class="text-white mx-3">
-    <i class="fab fa-instagram"></i>
-  </a>
- 
-</div>
-<p>&copy; 2024 Your Company. All Rights Reserved.</p>
-</footer>
-    <script src="products_card.js"></script>
+
+    <!-- Footer with Social Media Icons -->
+    <footer class="bg-secondary text-white text-center p-4 mt-auto">
+      <div class="container">
+        <p>Follow us on social media:</p>
+        <a
+          href="https://www.facebook.com/boohoo.com"
+          target="_blank"
+          class="text-white mx-3"
+        >
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a
+          href="https://www.youtube.com/c/boohoo"
+          target="_blank"
+          class="text-white mx-3"
+        >
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/boohoo/"
+          target="_blank"
+          class="text-white mx-3"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+    </footer>
+
+    <script src="javascript/products_card.js"></script>
   </body>
 </html>

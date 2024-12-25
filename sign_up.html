@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up - Online Shopping</title>
+    <title>Login</title>
     <link rel="stylesheet" href="\css\main.min.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -13,192 +13,243 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom Styles -->
+
     <style>
-      body {
-        background-color: #f8f9fa;
-      }
       .form-container {
         max-width: 500px;
-        margin: 50px auto;
         padding: 20px;
         background-color: #ffffffc0;
         border-radius: 10px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       }
+
       .form-container h2 {
         text-align: center;
         margin-bottom: 20px;
       }
+
+      /* Make carousel images cover the entire space */
+      .carousel-item img {
+        object-fit: cover;
+        height: 100%;
+      }
+
+      /* Ensure full screen height on small devices */
+      .carousel-inner {
+        height: 100%;
+      }
+
+      /* Ensure the carousel background image covers the container */
+      .carousel-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+      }
     </style>
   </head>
   <body>
-    <!-- Bootstrap Carousel for Background with Dark Overlay -->
+    <header>
+      <nav
+        class="navbar fixed-top navbar-expand-lg bg-body-tertiary"
+        data-bs-theme="dark"
+      >
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="shop.html"
+                  >Shop</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="about_us.html"
+                  >About Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="contact.html"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex me-3 py-2" role="search">
+              <div class="input-group">
+                <span class="input-group-text" id="search-icon">
+                  <i class="fa fa-search"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search Today's Offerings"
+                  aria-label="Search"
+                  aria-describedby="search-icon"
+                />
+              </div>
+            </form>
+            <a href="cart.html" class="btn btn-outline-light me-2">
+              <i class="fa-solid fa-cart-shopping"></i> Cart
+            </a>
+            <a href="account.html" class="btn btn-outline-light me-2">
+              <i class="fa-solid fa-user"></i> Account
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Container for Form and Carousel Side by Side -->
     <div
-      id="carouselExampleAutoplaying"
-      class="carousel slide carousel-fade"
-      data-bs-ride="carousel"
+      class="container mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center"
+      style="height: 100vh; position: relative; z-index: 10"
     >
-      <div class="carousel-inner">
-        <!-- First Item (Active) -->
-        <div class="carousel-item active">
-          <img src="images/gucci.jpg" class="d-block w-100" alt="Image 1" />
-          <!-- Dark Overlay -->
-          <div class="carousel-overlay"></div>
-        </div>
-        <!-- Second Item -->
-        <div class="carousel-item">
-          <img src="images/gucci.jpg" class="d-block w-100" alt="Image 2" />
-          <!-- Dark Overlay -->
-          <div class="carousel-overlay"></div>
-        </div>
-        <!-- Third Item -->
-        <div class="carousel-item">
-          <img src="images/gucci.jpg" class="d-block w-100" alt="Image 3" />
-          <!-- Dark Overlay -->
-          <div class="carousel-overlay"></div>
-        </div>
-        <!-- Fourth Item -->
-        <div class="carousel-item">
-          <img src="images/gucci.jpg" class="d-block w-100" alt="Image 4" />
-          <!-- Dark Overlay -->
-          <div class="carousel-overlay"></div>
-        </div>
-        <!-- Fifth Item -->
-        <div class="carousel-item">
-          <img src="images/gucci.jpg" class="d-block w-100" alt="Image 5" />
-          <!-- Dark Overlay -->
-          <div class="carousel-overlay"></div>
+      <!-- Login Form Section (Left) -->
+      <div
+        class="col-md-4 col-12 d-flex justify-content-center align-items-center mb-4 mb-md-0"
+      >
+        <div class="form-container">
+          <h2 style="color: rgb(0, 0, 0)">Sign Up</h2>
+          <p style="color: rgba(0, 0, 0, 0.849)">
+            Already have an account?
+            <a href="login.html" style="color: rgb(14, 50, 167)">Login</a>
+          </p>
+          <form id="registrationForm">
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="fullName" required />
+              <div class="invalid-feedback">Full name is required.</div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" required />
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                required
+              />
+              <div class="invalid-feedback">Password is required.</div>
+            </div>
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="confirmPassword"
+                required
+              />
+              <div class="invalid-feedback">Please confirm your password.</div>
+            </div>
+            <div class="mb-3 form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="termsCheck"
+                required
+              />
+              <label class="form-check-label" for="termsCheck"
+                >I agree to the terms and conditions</label
+              >
+              <div class="invalid-feedback">
+                You must agree to the terms and conditions.
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">
+              Register
+            </button>
+          </form>
         </div>
       </div>
 
-      <!-- Carousel Controls -->
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleAutoplaying"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <!-- Carousel Section (Right) -->
+      <div class="col-md-8 col-12">
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide carousel-fade"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="images/shop_4.jpg"
+                class="d-block w-100"
+                alt="Image 1"
+              />
+              <div class="carousel-overlay"></div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/shopping2.jpg"
+                class="d-block w-100"
+                alt="Image 2"
+              />
+              <div class="carousel-overlay"></div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/shopping3.jpeg"
+                class="d-block w-100"
+                alt="Image 3"
+              />
+              <div class="carousel-overlay"></div>
+            </div>
+          </div>
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <div class="form-container">
-      <h2 style="color: rgb(0, 0, 0)">Sign Up</h2>
-      <p style="color: rgba(0, 0, 0, 0.849)">
-        Already have an account?
-        <a href="login.html" style="color: rgb(14, 50, 167)">Login</a>
-      </p>
-      <form id="registrationForm">
-        <div class="mb-3">
-          <label for="fullName" class="form-label">Full Name</label>
-          <input type="text" class="form-control" id="fullName" required />
-          <div class="invalid-feedback">Full name is required.</div>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email Address</label>
-          <input type="email" class="form-control" id="email" required />
-          <div class="invalid-feedback">
-            Please enter a valid email address.
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" required />
-          <div class="invalid-feedback">Password is required.</div>
-        </div>
-        <div class="mb-3">
-          <label for="confirmPassword" class="form-label"
-            >Confirm Password</label
-          >
-          <input
-            type="password"
-            class="form-control"
-            id="confirmPassword"
-            required
-          />
-          <div class="invalid-feedback">Please confirm your password.</div>
-        </div>
-        <div class="mb-3 form-check">
-          <input
-            type="checkbox"
-            class="form-check-input"
-            id="termsCheck"
-            required
-          />
-          <label class="form-check-label" for="termsCheck"
-            >I agree to the terms and conditions</label
-          >
-          <div class="invalid-feedback">
-            You must agree to the terms and conditions.
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Register</button>
-      </form>
-    </div>
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-      // JavaScript form validation and redirection
-      document
-        .getElementById("registrationForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          // Clear previous error messages
-          let form = event.target;
-          let inputs = form.querySelectorAll("input");
-          let isValid = true;
-
-          // Loop through inputs to validate
-          inputs.forEach((input) => {
-            if (!input.validity.valid) {
-              input.classList.add("is-invalid");
-              isValid = false;
-            } else {
-              input.classList.remove("is-invalid");
-            }
-          });
-
-          // Check if passwords match
-          const password = document.getElementById("password").value;
-          const confirmPassword =
-            document.getElementById("confirmPassword").value;
-          if (password !== confirmPassword) {
-            document
-              .getElementById("confirmPassword")
-              .classList.add("is-invalid");
-            isValid = false;
-          } else {
-            document
-              .getElementById("confirmPassword")
-              .classList.remove("is-invalid");
-          }
-
-          // If form is valid, proceed
-          if (isValid) {
-            alert("Registration successful! Redirecting to home page...");
-            form.reset();
-            // Redirect to home page
-            window.location.href = "home.html";
-          } else {
-            alert("Please fill out the form correctly.");
-          }
-        });
-    </script>
+    <script src="javascript/login.js"></script>
   </body>
 </html>
