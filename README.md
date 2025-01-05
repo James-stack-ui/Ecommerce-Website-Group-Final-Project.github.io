@@ -3,7 +3,7 @@
   <a href="" >
   <img src="ecommerce_website_walkthrough.gif" alt=""> </a>
 </p>
-This repository contains the code for our **E-Commerce Website**, developed as the final project for the **CPTR204: Website Design & Implementation** course. As the **Project Lead**, I guided the team in building a fully functional and responsive online shopping platform using HTML5, CSS3, SASS, Bootstrap, & Javascript.
+This repository contains the code for an E-Commerce Website, developed as the final project for the CPTR204: Website Design & Implementation course. As the Project Lead, I guided the team in building a fully functional and responsive online shopping platform using HTML5, CSS3, SASS, Bootstrap, & Javascript.
 
 ---
 
